@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SafeByte logo">
+  <!-- Original SafeByte logo: shield + keyhole + binary bits (non-copyrighted, made by Group 5) -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2EE6C9"/>
+      <stop offset="1" stop-color="#0E8F86"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 L56 13 V30 C56 45 46 55 32 60 C18 55 8 45 8 30 V13 Z" fill="#0B1A2E" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="32" cy="28" r="7" fill="url(#g)"/>
+  <path d="M28.5 32 L35.5 32 L37 46 L27 46 Z" fill="url(#g)"/>
+  <text x="14" y="22" font-family="monospace" font-size="6" fill="#F5A524">10</text>
+  <text x="44" y="22" font-family="monospace" font-size="6" fill="#F5A524">01</text>
+</svg>

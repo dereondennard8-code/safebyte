@@ -1,0 +1,264 @@
+/* =========================================================
+   SafeByte - CSS Team Project, Group 5
+   ONE external style sheet linked by every page.
+   Agreed color scheme:
+     Navy (background/header)  #0B1A2E
+     Deep navy (cards on dark) #12243D
+     Teal (primary accent)     #14C8B4
+     Amber (warnings/CTA)      #F5A524
+     Cloud (page background)   #F4F7FA
+     Slate (body text)         #1E293B
+   Agreed fonts:
+     Headings: "Chakra Petch", sans-serif
+     Body:     "Source Sans 3", Arial, sans-serif
+   ========================================================= */
+
+/* ---------- 1. Reset & base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #1E293B;
+  background-color: #F4F7FA;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: "Chakra Petch", Arial, sans-serif;
+  line-height: 1.2;
+  color: #0B1A2E;
+}
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.9rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+p  { margin-bottom: 1rem; }
+
+a { color: #0E8F86; font-weight: 600; }
+a:hover, a:focus { color: #F5A524; }
+
+/* Centers content and limits line length */
+.wrapper { width: 90%; max-width: 1120px; margin: 0 auto; }
+
+/* ---------- 2. Header & navigation (across the top) ---------- */
+header {
+  background-color: #0B1A2E;
+  border-bottom: 3px solid #14C8B4;
+}
+header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.brand img { width: 46px; height: 46px; }
+.brand-name span { color: #14C8B4; }
+.brand:hover { color: #FFFFFF; }
+
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem; }
+nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  color: #CFE3F2;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+nav a:hover, nav a:focus { background-color: #12243D; color: #14C8B4; }
+nav a.current { background-color: #14C8B4; color: #0B1A2E; }
+
+/* ---------- 3. Hero / page banners ---------- */
+.hero {
+  background: linear-gradient(90deg, rgba(11,26,46,0.95) 35%, rgba(11,26,46,0.35)),
+              url("../images/hero-shield.jpg") center / cover no-repeat;
+  color: #FFFFFF;
+  padding: 6rem 0;
+}
+.hero h1 { color: #FFFFFF; max-width: 620px; }
+.hero h1 em { color: #14C8B4; font-style: normal; }
+.hero p { max-width: 560px; font-size: 1.2rem; color: #CFE3F2; margin: 1rem 0 2rem; }
+
+.page-banner {
+  background-color: #0B1A2E;
+  color: #CFE3F2;
+  padding: 3rem 0;
+  border-bottom: 1px solid #12243D;
+}
+.page-banner h1 { color: #FFFFFF; }
+.page-banner p { max-width: 640px; margin: 0.5rem 0 0; }
+.tag {
+  display: inline-block;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #14C8B4;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #14C8B4;
+  background-color: #14C8B4;
+  color: #0B1A2E;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn:hover, .btn:focus { background-color: #F5A524; border-color: #F5A524; color: #0B1A2E; }
+.btn-outline { background-color: transparent; color: #14C8B4; margin-left: 0.5rem; }
+
+/* ---------- 5. Sections & multi-column layouts ---------- */
+section { padding: 4rem 0; }
+.section-alt { background-color: #FFFFFF; }
+.section-dark { background-color: #0B1A2E; color: #CFE3F2; }
+.section-dark h2, .section-dark h3 { color: #FFFFFF; }
+.intro { max-width: 680px; margin-bottom: 2rem; }
+
+/* Three equal columns (home page cards) */
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+/* Two columns: main article + sidebar */
+.two-col { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start; }
+/* Two equal columns */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+/* Newspaper-style text columns (CSS columns) */
+.text-columns { column-count: 2; column-gap: 2.5rem; column-rule: 1px solid #D6E0EA; }
+
+/* ---------- 6. Cards / articles ---------- */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #D6E0EA;
+  border-top: 4px solid #14C8B4;
+  border-radius: 6px;
+  padding: 1.6rem;
+}
+.section-dark .card { background-color: #12243D; border-color: #1F3A5C; border-top-color: #14C8B4; }
+.card .icon {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.4rem;
+  color: #F5A524;
+  margin-bottom: 0.5rem;
+}
+.figure-frame { border-radius: 6px; overflow: hidden; border: 3px solid #14C8B4; }
+figcaption { font-size: 0.9rem; color: #5B6B80; margin-top: 0.5rem; }
+
+aside {
+  background-color: #0B1A2E;
+  color: #CFE3F2;
+  border-radius: 6px;
+  padding: 1.6rem;
+}
+aside h3 { color: #14C8B4; }
+aside li { margin-bottom: 0.5rem; }
+
+/* ---------- 7. Lists ---------- */
+.check-list { list-style: none; }
+.check-list li { padding-left: 1.8rem; position: relative; margin-bottom: 0.6rem; }
+.check-list li::before { content: "\2714"; position: absolute; left: 0; color: #14C8B4; font-weight: 700; }
+ol.steps { padding-left: 1.4rem; }
+ol.steps li { margin-bottom: 0.8rem; }
+ol.steps li::marker { color: #0E8F86; font-weight: 700; }
+ul.plain { padding-left: 1.3rem; }
+
+/* ---------- 8. Stats strip ---------- */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; }
+.stat strong {
+  display: block;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2.6rem;
+  color: #14C8B4;
+}
+
+/* ---------- 9. Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  font-size: 0.98rem;
+}
+caption {
+  text-align: left;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding-bottom: 0.6rem;
+}
+th, td { padding: 0.8rem 1rem; border: 1px solid #D6E0EA; text-align: left; vertical-align: top; }
+thead th { background-color: #0B1A2E; color: #FFFFFF; font-family: "Chakra Petch", sans-serif; }
+tbody tr:nth-child(even) { background-color: #F4F7FA; }
+.risk-high { color: #C2410C; font-weight: 700; }
+.risk-med  { color: #B45309; font-weight: 700; }
+
+/* ---------- 10. Video ---------- */
+.video-box { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; border: 3px solid #14C8B4; }
+.video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- 11. Forms ---------- */
+form { background-color: #FFFFFF; border: 1px solid #D6E0EA; border-radius: 6px; padding: 2rem; }
+fieldset { border: 1px solid #D6E0EA; border-radius: 4px; padding: 1rem 1.2rem; margin-bottom: 1.2rem; }
+legend { font-family: "Chakra Petch", sans-serif; font-weight: 700; padding: 0 0.4rem; }
+label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+input[type="text"], input[type="email"], select, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #9FB3C8;
+  border-radius: 4px;
+  font: inherit;
+  margin-bottom: 1rem;
+  background-color: #F9FBFD;
+}
+input:focus, select:focus, textarea:focus { outline: 3px solid #14C8B4; border-color: #14C8B4; }
+.inline-option { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 400; margin-right: 1.2rem; }
+
+/* ---------- 12. Team (About page) ---------- */
+.team-member h3 { margin-bottom: 0.2rem; }
+.role { color: #0E8F86; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.6rem; }
+
+/* ---------- 13. Footer ---------- */
+footer {
+  background-color: #0B1A2E;
+  color: #9FB3C8;
+  padding: 2.5rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem; }
+footer h4 { color: #FFFFFF; margin-bottom: 0.6rem; }
+footer ul { list-style: none; }
+footer a { color: #CFE3F2; font-weight: 400; }
+footer a:hover { color: #14C8B4; }
+.credit { border-top: 1px solid #12243D; padding-top: 1rem; text-align: center; }
+.credit strong { color: #14C8B4; }
+
+/* ---------- 14. Helper classes (no inline styles anywhere) ---------- */
+.space-top { margin-top: 1rem; }
+.note { margin-top: 1.5rem; font-size: 0.85rem; color: #5B6B80; text-align: center; }
+aside a { color: #14C8B4; }
+
+/* ---------- 15. Small screens ---------- */
+@media (max-width: 800px) {
+  h1 { font-size: 2rem; }
+  .three-col, .two-col, .split, .stats, footer .footer-grid { grid-template-columns: 1fr; }
+  .text-columns { column-count: 1; }
+  .hero { padding: 4rem 0; }
+  header .wrapper { justify-content: center; }
+  .btn-outline { margin: 0.75rem 0 0; }
+}
